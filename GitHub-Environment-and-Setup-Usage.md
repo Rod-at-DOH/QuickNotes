@@ -45,7 +45,7 @@ View deployment history on the repository's main page under the Environments sec
 
 Use logs and visualization graphs from workflow runs for debugging.
 
-Best Practices
+5. Best Practices
 
 Use secrets for sensitive data like API keys.
 
