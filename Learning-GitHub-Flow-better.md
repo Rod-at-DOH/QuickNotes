@@ -36,23 +36,23 @@ GitHub Actions workflows are event‑driven. That’s the primary design axis—
 
 From the documentation:
 
-- A workflow runs when an event occurs in the repository (push, pull request, release, etc.)
-- Filters refine which instances of that event matter
+- A workflow runs when an **event** occurs in the repository (push, pull request, release, etc.)
+- Filters refine *which instances* of that event matter
 
-See **Understanding GitHub Actions** → Events: https://docs.github.com/en/actions/get-started/understand-github-actions#events (opens in a new tab)
+See **Understanding GitHub Actions → Events**: https://docs.github.com/en/actions/get-started/understand-github-actions#events 
 
 ## When one workflow makes sense
 
 A **single workflow** is usually appropriate when:
 
-- The automation responds to one conceptual lifecycle
+- The automation responds to **one conceptual lifecycle**
 - The jobs are tightly related
-- The same workflow file should handle multiple variants of the same event
+- The same workflow file should handle multiple variants of *the same event*
 
 Example (conceptual, not prescriptive):
 
 - CI checks for pull requests
-- Extra steps when the PR targets main
+- Extra steps when the PR targets `main`
 
 In this case, using:
 
@@ -71,7 +71,7 @@ This aligns well with GitHub Flow when you think of it as:
 
 Multiple workflows are appropriate when:
 
-- Different events represent different lifecycle moments
+- Different **events** represent different lifecycle moments
 - The automation has a different purpose
 - You want clear separation of intent
 
@@ -81,9 +81,9 @@ Common GitHub Flow–aligned splits:
 - `push` to `main` → release or deployment automation
 - `release` → packaging or publishing automation
 
-*These are not variants of the same event*—they are different signals in the flow.
+These are *not variants of the same event*—they are different signals in the flow.
 
-This follows directly from the Actions model: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows (opens in a new tab)
+This follows directly from the Actions model: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 
 -------
 
@@ -100,13 +100,13 @@ Use them when:
 
 Examples of documented filters:
 
-- branches / branches-ignore
-- paths / paths-ignore
-- types (for events like pull_request or release)
+- `branches` / `branches-ignore`
+- `paths` / `paths-ignore`
+- `types` (for events like `pull_request` or `release`)
 
 Filters are about noise reduction, not architecture.
 
-If you’re unsure which filter to use, that’s usually a signal to step back and re‑identify the event, not add more conditions.
+If you’re unsure which filter to use, that’s usually a signal to step back and re‑identify the **event**, not add more conditions.
 
 -------
 
@@ -117,7 +117,7 @@ For releases in GitHub Flow, the documentation treats `release` as its own event
 - Creating or publishing a release is a distinct action
 - Workflows triggered by release are naturally separate from CI
 
-That’s why release automation is commonly a separate workflow rather than an `if:` branch inside CI.
+That’s why release automation is commonly a **separate workflow** rather than an `if:` branch inside CI.
 
 See: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release 
 
@@ -152,4 +152,4 @@ If you later see different behavior in the enterprise org, that’s typically du
 
 -------
 
-If this framework helps clarify the why behind the patterns, you should be able to apply the documentation with more confidence. If you still feel blocked by organization‑specific behavior or policy enforcement, continuing to a support ticket is the right next step
+If this framework helps clarify the *why* behind the patterns, you should be able to apply the documentation with more confidence. If you still feel blocked by organization‑specific behavior or policy enforcement, continuing to a support ticket is the right next step
