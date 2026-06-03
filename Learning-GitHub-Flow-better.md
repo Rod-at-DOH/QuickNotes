@@ -1,7 +1,7 @@
 # Understanding GitHub Flow and how to structure Actions workflows
 > There isn’t a single “right” YAML pattern—the key is choosing filters and workflow boundaries based on what event you’re responding to and what outcome you want.
 
-You’re right to focus on GitHub Flow first, and then decide how GitHub Actions should support it. The confusion you’re seeing in forum replies comes from the fact that GitHub Flow defines how humans work, while workflows and filters define how automation reacts. Those are related, but not the same decision.
+You’re right to focus on GitHub Flow first, and then decide how GitHub Actions should support it. The confusion you’re seeing in forum replies comes from the fact that **GitHub Flow defines how humans work**, while **workflows and filters define how automation reacts**. Those are related, but not the same decision.
 
 Below is a way to reason about this using only what’s documented in GitHub’s Actions and workflow model.
 
