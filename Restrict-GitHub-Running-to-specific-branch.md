@@ -39,11 +39,15 @@ jobs:
 ```
 
 The key changes:
+
 •	**types: closed → types: opened** (triggers when PR is created)
+
 •	Add **if: github.head_ref == 'feature/get-semantic-version-numbers'** to the job (filters by source branch)
 
-This ensures the workflow only runs when:
+### This ensures the workflow only runs when:
 
 •	A pull request is **opened** (not closed)
+
 •	The PR is targeting the **main** branch (base branch)
+
 •	The PR is coming from the **feature/get-semantic-version-numbers** branch (head branch)
